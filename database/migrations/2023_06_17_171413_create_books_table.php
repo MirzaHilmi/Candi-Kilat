@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->nullable();
+            $table->text('cover_url');
+            $table->string('name');
+            $table->string('author');
+            $table->integer('release_year', false, true);
+            $table->decimal('rating', 8, 2, true);
+            $table->boolean('hard_copy_available')->default(true);
+            $table->boolean('ebook_available')->default(true);
+            $table->boolean('audio_book_available')->default(true);
+            $table->boolean('status')->default(true);
+            $table->string('bookshelf');
             $table->timestamps();
         });
     }
