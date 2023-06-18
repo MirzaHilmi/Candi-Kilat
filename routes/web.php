@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Book;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +31,13 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::group(['middleware' => ['role:librarian']], function () {
+    Route::prefix('/book')->group(function () {
+        Route::get('/create', [BookController::class, 'create']);
+        Route::post('/create', [BookController::class, 'store']);
+        Route::get('/{book}/edit', [BookController::class, 'edit']);
+        Route::patch('/{book}/edit', [BookController::class, 'update']);
+        Route::delete('/{book}/delete', [BookController::class, 'destroy']);
+    });
+});
