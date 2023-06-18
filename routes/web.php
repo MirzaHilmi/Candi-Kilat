@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+// Librarian Routes for Books CRUD
 Route::group(['middleware' => ['role:librarian']], function () {
     Route::prefix('/book')->group(function () {
         Route::get('/create', [BookController::class, 'create']);
