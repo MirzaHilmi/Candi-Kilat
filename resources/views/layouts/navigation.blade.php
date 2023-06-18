@@ -1,4 +1,47 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-[#C2E8FF] p-8 w-1/5 fixed h-screen flex flex-col gap-4 items-center justify-between border-b border-gray-100">
+    {{-- <div class="flex flex-col items-center gap-4">
+        <div class="mb-4">
+                <img src="{{url('/images/mybookshelf.png')}}" alt="Image" />
+        </div>
+
+
+        <a class="flex flex-row w-full gap-4 items-center" href="{{ route('login') }}">
+                <img src="{{url('/images/home.svg')}}" alt="Image" />
+                {{ __('Beranda') }}
+        </a>
+        <a class="flex flex-row w-full gap-4 items-center" href="{{ route('login') }}">
+                <img src="{{url('/images/Search.svg')}}" alt="Image" />
+                {{ __('Pencarian Buku') }}
+        </a>
+        <a class="flex flex-row w-full gap-4 items-center" href="{{ route('login') }}">
+                <img src="{{url('/images/Bookshelf.svg')}}" alt="Image" />
+                {{ __('Daftar Buku') }}
+        </a>
+        <a class="flex flex-row w-full gap-4 items-center" href="{{ route('login') }}">
+                <img src="{{url('/images/gift.svg')}}" alt="Image" />
+                {{ __('Peminjaman Buku') }}
+        </a>
+        <a class="flex flex-row w-full gap-4 items-center" href="{{ route('login') }}">
+                <img src="{{url('/images/gift.svg')}}" alt="Image" />
+                {{ __('Pengembalian Buku') }}
+        </a>
+        </div >
+        <div class="flex flex-col ">
+        <a class="flex flex-row w-full gap-4 items-center" href="{{ route('login') }}">
+                {{ __('Tentang') }}
+        </a>
+        <a class="flex flex-row w-full gap-4 items-center" href="{{ route('login') }}">
+                {{ __('Syarat dan Ketentuan') }}
+        </a>
+
+        </div>
+        <div class="fixed flex flex-row ">
+            <div class="flex flex-row items-center gap-2 border border-slate-300 rounded-full py-2">
+            <h3>Semua</h3>
+            <input type="text">
+        </div>
+    </div> --}}
+
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
