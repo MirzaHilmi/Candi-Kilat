@@ -29,7 +29,9 @@ class BookController extends Controller
      */
     public function store(StoreBookRequest $request)
     {
-        //
+        $validated = $request->validated();
+        Book::create($validated);
+        return redirect()->route('dashboard');
     }
 
     /**
@@ -37,7 +39,7 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        //
+        return view('dashboard', ['book' => $book]);
     }
 
     /**
@@ -53,7 +55,9 @@ class BookController extends Controller
      */
     public function update(UpdateBookRequest $request, Book $book)
     {
-        //
+        $validated = $request->validate();
+        $book->update($validated);
+        return view('dashboard', ['book' => $book]);
     }
 
     /**
@@ -61,6 +65,7 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
+        Book::destroy($book);
+        return redirect()->route('dashboard');
     }
 }
