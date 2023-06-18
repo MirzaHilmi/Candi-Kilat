@@ -17,18 +17,19 @@
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
+            @include('layouts.topbar')
 
             <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
+            {{-- @if (isset($header))
+                <header class="shadow bg-red-500">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
                 </header>
-            @endif
+            @endif --}}
 
             <!-- Page Content -->
-            <main>
+            <main class="w-full pl-[20%] pt-24">
                 {{ $slot }}
             </main>
         </div>
