@@ -12,7 +12,7 @@
         <!-- Email Address -->
         <div class="mt-4">
             <x-input-label class="font-bold" for="identifier" :value="__('Email atau NIM')" />
-            <x-text-input id="identifier" class="block mt-1 w-full" type="text" name="identifier" :value="old('email')" required autocomplete="username" />
+            <x-text-input id="identifier" class="block mt-1 w-full" type="text" name="identifier" :value="old('identifier')" required autocomplete="username" />
             {{-- <x-input-error :messages="$errors->get('email')" class="mt-2" /> --}}
         </div>
 
