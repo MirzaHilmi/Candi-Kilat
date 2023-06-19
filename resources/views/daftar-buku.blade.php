@@ -1,11 +1,12 @@
 <x-app-layout>
   <div class="w-full">
-    <table class="w-full table-fixed border-separate border-spacing-x-8 border-spacing-y-2 px-4">
+    <table
+      class="w-full table-fixed border-separate border-spacing-y-2 border-spacing-x-2 px-2 text-xs md:border-spacing-x-8 md:px-4 md:text-base">
       <thead class="text-left">
         <tr class="">
           <th class="w-[10%]">Cover</th>
-          <th class="w-[40%]">Title</th>
-          <th class="w-[20%]">Category</th>
+          <th class="w-[30%] md:w-[40%]">Title</th>
+          <th class="hidden w-[20%] md:flex">Category</th>
           <th class="w-[15%]">Status</th>
           <th class="w-[15%]">Edit</th>
         </tr>
@@ -17,26 +18,31 @@
           </td>
           <td class="">
             <div class="flex flex-col">
-              <h3 class="text-lg font-bold">Dont Make Me Think</h3>
+              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
               <h4 class="text-sm">Steve Kurg, 2000</h4>
               <span class="text-xs">Edisi Kedua</span>
             </div>
           </td>
-          <td>
+          <td class="hidden md:flex">
             <div class="flex flex-col">
               <h3>Ilmu Komputer</h3>
               <h4 class="text-sm">UX Design</h4>
             </div>
           </td>
           <td>
-            <div class="flex flex-col">
-              <h3 class="rounded-md bg-[#052355] py-1 px-2 text-center text-white">Terpinjam</h3>
-              <h4 class="text-center text-sm font-bold">Fayzul</h4>
+            <div class="flex flex-col gap-2">
+              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
+              <div class="flex flex-row items-center text-sm">
+                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
+                <span>
+                  B-10
+                </span>
+              </div>
             </div>
           </td>
           <td>
-            <button class="w-max rounded-md border-2 border-[#517DAB] py-1 px-2">
-              Update Status
+            <button class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
+              Preview
             </button>
           </td>
         </tr>
@@ -46,26 +52,31 @@
           </td>
           <td class="">
             <div class="flex flex-col">
-              <h3 class="text-lg font-bold">Dont Make Me Think</h3>
+              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
               <h4 class="text-sm">Steve Kurg, 2000</h4>
               <span class="text-xs">Edisi Kedua</span>
             </div>
           </td>
-          <td>
+          <td class="hidden md:flex">
             <div class="flex flex-col">
               <h3>Ilmu Komputer</h3>
               <h4 class="text-sm">UX Design</h4>
             </div>
           </td>
           <td>
-            <div class="flex flex-col">
-              <h3 class="rounded-md bg-[#052355] py-1 px-2 text-center text-white">Terpinjam</h3>
-              <h4 class="text-center text-sm font-bold">Fayzul</h4>
+            <div class="flex flex-col gap-2">
+              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
+              <div class="flex flex-row items-center text-sm">
+                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
+                <span>
+                  B-10
+                </span>
+              </div>
             </div>
           </td>
           <td>
-            <button class="w-max rounded-md border-2 border-[#517DAB] py-1 px-2">
-              Update Status
+            <button class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
+              Preview
             </button>
           </td>
         </tr>
@@ -75,26 +86,31 @@
           </td>
           <td class="">
             <div class="flex flex-col">
-              <h3 class="text-lg font-bold">Dont Make Me Think</h3>
+              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
               <h4 class="text-sm">Steve Kurg, 2000</h4>
               <span class="text-xs">Edisi Kedua</span>
             </div>
           </td>
-          <td>
+          <td class="hidden md:flex">
             <div class="flex flex-col">
               <h3>Ilmu Komputer</h3>
               <h4 class="text-sm">UX Design</h4>
             </div>
           </td>
           <td>
-            <div class="flex flex-col">
-              <h3 class="rounded-md bg-[#052355] py-1 px-2 text-center text-white">Terpinjam</h3>
-              <h4 class="text-center text-sm font-bold">Fayzul</h4>
+            <div class="flex flex-col gap-2">
+              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
+              <div class="flex flex-row items-center text-sm">
+                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
+                <span>
+                  B-10
+                </span>
+              </div>
             </div>
           </td>
           <td>
-            <button class="w-max rounded-md border-2 border-[#517DAB] py-1 px-2">
-              Update Status
+            <button class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
+              Preview
             </button>
           </td>
         </tr>
@@ -104,26 +120,31 @@
           </td>
           <td class="">
             <div class="flex flex-col">
-              <h3 class="text-lg font-bold">Dont Make Me Think</h3>
+              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
               <h4 class="text-sm">Steve Kurg, 2000</h4>
               <span class="text-xs">Edisi Kedua</span>
             </div>
           </td>
-          <td>
+          <td class="hidden md:flex">
             <div class="flex flex-col">
               <h3>Ilmu Komputer</h3>
               <h4 class="text-sm">UX Design</h4>
             </div>
           </td>
           <td>
-            <div class="flex flex-col">
-              <h3 class="rounded-md bg-[#052355] py-1 px-2 text-center text-white">Terpinjam</h3>
-              <h4 class="text-center text-sm font-bold">Fayzul</h4>
+            <div class="flex flex-col gap-2">
+              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
+              <div class="flex flex-row items-center text-sm">
+                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
+                <span>
+                  B-10
+                </span>
+              </div>
             </div>
           </td>
           <td>
-            <button class="w-max rounded-md border-2 border-[#517DAB] py-1 px-2">
-              Update Status
+            <button class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
+              Preview
             </button>
           </td>
         </tr>
@@ -133,26 +154,31 @@
           </td>
           <td class="">
             <div class="flex flex-col">
-              <h3 class="text-lg font-bold">Dont Make Me Think</h3>
+              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
               <h4 class="text-sm">Steve Kurg, 2000</h4>
               <span class="text-xs">Edisi Kedua</span>
             </div>
           </td>
-          <td>
+          <td class="hidden md:flex">
             <div class="flex flex-col">
               <h3>Ilmu Komputer</h3>
               <h4 class="text-sm">UX Design</h4>
             </div>
           </td>
           <td>
-            <div class="flex flex-col">
-              <h3 class="rounded-md bg-[#052355] py-1 px-2 text-center text-white">Terpinjam</h3>
-              <h4 class="text-center text-sm font-bold">Fayzul</h4>
+            <div class="flex flex-col gap-2">
+              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
+              <div class="flex flex-row items-center text-sm">
+                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
+                <span>
+                  B-10
+                </span>
+              </div>
             </div>
           </td>
           <td>
-            <button class="w-max rounded-md border-2 border-[#517DAB] py-1 px-2">
-              Update Status
+            <button class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
+              Preview
             </button>
           </td>
         </tr>
@@ -162,26 +188,31 @@
           </td>
           <td class="">
             <div class="flex flex-col">
-              <h3 class="text-lg font-bold">Dont Make Me Think</h3>
+              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
               <h4 class="text-sm">Steve Kurg, 2000</h4>
               <span class="text-xs">Edisi Kedua</span>
             </div>
           </td>
-          <td>
+          <td class="hidden md:flex">
             <div class="flex flex-col">
               <h3>Ilmu Komputer</h3>
               <h4 class="text-sm">UX Design</h4>
             </div>
           </td>
           <td>
-            <div class="flex flex-col">
-              <h3 class="rounded-md bg-[#052355] py-1 px-2 text-center text-white">Terpinjam</h3>
-              <h4 class="text-center text-sm font-bold">Fayzul</h4>
+            <div class="flex flex-col gap-2">
+              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
+              <div class="flex flex-row items-center text-sm">
+                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
+                <span>
+                  B-10
+                </span>
+              </div>
             </div>
           </td>
           <td>
-            <button class="w-max rounded-md border-2 border-[#517DAB] py-1 px-2">
-              Update Status
+            <button class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
+              Preview
             </button>
           </td>
         </tr>
@@ -191,26 +222,31 @@
           </td>
           <td class="">
             <div class="flex flex-col">
-              <h3 class="text-lg font-bold">Dont Make Me Think</h3>
+              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
               <h4 class="text-sm">Steve Kurg, 2000</h4>
               <span class="text-xs">Edisi Kedua</span>
             </div>
           </td>
-          <td>
+          <td class="hidden md:flex">
             <div class="flex flex-col">
               <h3>Ilmu Komputer</h3>
               <h4 class="text-sm">UX Design</h4>
             </div>
           </td>
           <td>
-            <div class="flex flex-col">
-              <h3 class="rounded-md bg-[#052355] py-1 px-2 text-center text-white">Terpinjam</h3>
-              <h4 class="text-center text-sm font-bold">Fayzul</h4>
+            <div class="flex flex-col gap-2">
+              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
+              <div class="flex flex-row items-center text-sm">
+                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
+                <span>
+                  B-10
+                </span>
+              </div>
             </div>
           </td>
           <td>
-            <button class="w-max rounded-md border-2 border-[#517DAB] py-1 px-2">
-              Update Status
+            <button class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
+              Preview
             </button>
           </td>
         </tr>
@@ -220,26 +256,31 @@
           </td>
           <td class="">
             <div class="flex flex-col">
-              <h3 class="text-lg font-bold">Dont Make Me Think</h3>
+              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
               <h4 class="text-sm">Steve Kurg, 2000</h4>
               <span class="text-xs">Edisi Kedua</span>
             </div>
           </td>
-          <td>
+          <td class="hidden md:flex">
             <div class="flex flex-col">
               <h3>Ilmu Komputer</h3>
               <h4 class="text-sm">UX Design</h4>
             </div>
           </td>
           <td>
-            <div class="flex flex-col">
-              <h3 class="rounded-md bg-[#052355] py-1 px-2 text-center text-white">Terpinjam</h3>
-              <h4 class="text-center text-sm font-bold">Fayzul</h4>
+            <div class="flex flex-col gap-2">
+              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
+              <div class="flex flex-row items-center text-sm">
+                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
+                <span>
+                  B-10
+                </span>
+              </div>
             </div>
           </td>
           <td>
-            <button class="w-max rounded-md border-2 border-[#517DAB] py-1 px-2">
-              Update Status
+            <button class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
+              Preview
             </button>
           </td>
         </tr>

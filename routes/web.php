@@ -22,6 +22,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/daftar-buku', function () {
+    return view('daftar-buku');
+})->middleware(['auth', 'verified'])->name('daftar-buku');
+
 Route::get('/book-detail', function () {
     return view('book-detail');
 })->middleware(['auth', 'verified'])->name('book-detail');
@@ -29,6 +33,14 @@ Route::get('/book-detail', function () {
 Route::get('/history', function () {
     return view('history');
 })->middleware(['auth', 'verified'])->name('history');
+
+Route::get('/peminjaman', function () {
+    return view('peminjaman');
+})->middleware(['auth', 'verified'])->name('peminjaman');
+
+Route::get('/pengembalian', function () {
+    return view('pengembalian');
+})->middleware(['auth', 'verified'])->name('pengembalian');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
