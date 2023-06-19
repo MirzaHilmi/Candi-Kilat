@@ -1,12 +1,12 @@
 <x-app-layout>
   <div class="w-full">
     <table
-      class="w-full table-fixed border-separate border-spacing-y-2 border-spacing-x-2 px-2 text-xs md:border-spacing-x-8 md:px-4 md:text-base">
+      class="w-full table-fixed border-separate border-spacing-y-2 border-spacing-x-2 px-2 text-xs md:border-spacing-x-4 md:px-4 md:text-base">
       <thead class="text-left">
         <tr class="">
           <th class="w-[10%]">Cover</th>
           <th class="w-[30%] md:w-[40%]">Title</th>
-          <th class="hidden w-[20%] md:flex">Category</th>
+          <th class="hidden w-[20%] sm:flex">Category</th>
           <th class="w-[15%]">Status</th>
           <th class="w-[15%]">Edit</th>
         </tr>
@@ -23,7 +23,7 @@
               <span class="text-xs">Edisi Kedua</span>
             </div>
           </td>
-          <td class="hidden md:flex">
+          <td class="hidden sm:flex">
             <div class="flex flex-col">
               <h3>Ilmu Komputer</h3>
               <h4 class="text-sm">UX Design</h4>
@@ -57,7 +57,7 @@
               <span class="text-xs">Edisi Kedua</span>
             </div>
           </td>
-          <td class="hidden md:flex">
+          <td class="hidden sm:flex">
             <div class="flex flex-col">
               <h3>Ilmu Komputer</h3>
               <h4 class="text-sm">UX Design</h4>
@@ -91,7 +91,7 @@
               <span class="text-xs">Edisi Kedua</span>
             </div>
           </td>
-          <td class="hidden md:flex">
+          <td class="hidden sm:flex">
             <div class="flex flex-col">
               <h3>Ilmu Komputer</h3>
               <h4 class="text-sm">UX Design</h4>
@@ -125,7 +125,7 @@
               <span class="text-xs">Edisi Kedua</span>
             </div>
           </td>
-          <td class="hidden md:flex">
+          <td class="hidden sm:flex">
             <div class="flex flex-col">
               <h3>Ilmu Komputer</h3>
               <h4 class="text-sm">UX Design</h4>
@@ -159,7 +159,7 @@
               <span class="text-xs">Edisi Kedua</span>
             </div>
           </td>
-          <td class="hidden md:flex">
+          <td class="hidden sm:flex">
             <div class="flex flex-col">
               <h3>Ilmu Komputer</h3>
               <h4 class="text-sm">UX Design</h4>
@@ -193,7 +193,7 @@
               <span class="text-xs">Edisi Kedua</span>
             </div>
           </td>
-          <td class="hidden md:flex">
+          <td class="hidden sm:flex">
             <div class="flex flex-col">
               <h3>Ilmu Komputer</h3>
               <h4 class="text-sm">UX Design</h4>
@@ -227,7 +227,7 @@
               <span class="text-xs">Edisi Kedua</span>
             </div>
           </td>
-          <td class="hidden md:flex">
+          <td class="hidden sm:flex">
             <div class="flex flex-col">
               <h3>Ilmu Komputer</h3>
               <h4 class="text-sm">UX Design</h4>
@@ -261,7 +261,7 @@
               <span class="text-xs">Edisi Kedua</span>
             </div>
           </td>
-          <td class="hidden md:flex">
+          <td class="hidden sm:flex">
             <div class="flex flex-col">
               <h3>Ilmu Komputer</h3>
               <h4 class="text-sm">UX Design</h4>

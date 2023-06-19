@@ -28,8 +28,8 @@ Route::get('/daftar-buku', function () {
     return view('daftar-buku');
 })->middleware(['auth', 'verified'])->name('daftar-buku');
 
-Route::get('/book-detail', function () {
-    return view('book-detail');
+Route::get('/book-detail/{id}', function ($id) {
+    return view('book-detail', ['id' => $id]);
 })->middleware(['auth', 'verified'])->name('book-detail');
 
 Route::get('/history', function () {
