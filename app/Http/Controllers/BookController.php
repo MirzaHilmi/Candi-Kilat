@@ -37,8 +37,10 @@ class BookController extends Controller
     {
         $searchKeyword = htmlspecialchars(strip_tags($keyword));
 
-        $result = Book::where('title', 'like', "%$searchKeyword%")->take(15)->get()
-            ?? Book::where('author_id', function (Builder $query) use ($searchKeyword) {
+        $result =
+            Book::where('title', 'like', "%$searchKeyword%")->take(15)->get()
+            ??
+            Book::where('author_id', function (Builder $query) use ($searchKeyword) {
                 $query->select('id')
                     ->from('author')
                     ->where('name', 'like', "%$searchKeyword%");
