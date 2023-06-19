@@ -17,11 +17,11 @@
       <div class="mb-4">
         <img src="{{ url('/images/mybookshelf.png') }}" alt="Image" />
       </div>
-      <a class="flex w-full flex-row items-center gap-4" href="{{ route('login') }}">
+      <a class="flex w-full flex-row items-center gap-4" href="{{ route('home.index') }}">
         <img src="{{ url('/images/home.svg') }}" alt="Image" class="w-4" />
         {{ __('Beranda') }}
       </a>
-      <a class="flex w-full flex-row items-center gap-4" href="{{ route('login') }}">
+      <a class="flex w-full flex-row items-center gap-4" href="{{ route('home.index') }}">
         <img src="{{ url('/images/Search.svg') }}" alt="Image" class="w-4" />
         {{ __('Pencarian Buku') }}
       </a>
