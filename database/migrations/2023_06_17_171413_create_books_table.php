@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->foreignId('author_id')->nullable()->constrained()->cascadeOnUpdate()->nullOnDelete();
-            $table->string('name');
+            $table->string('isbn', 13);
+            $table->string('title');
             $table->string('cover_url');
             $table->unsignedInteger('release_year');
             $table->string('publisher');
@@ -29,6 +30,8 @@ return new class extends Migration
             $table->boolean('status')->default(true);
             $table->string('bookshelf');
             $table->timestamps();
+
+            $table->index(['title', 'isbn']);
         });
 
     }

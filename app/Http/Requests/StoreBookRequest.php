@@ -31,7 +31,7 @@ class StoreBookRequest extends FormRequest
     {
         return [
             'author_id' => 'required|integer',
-            'name' => 'required|string',
+            'title' => 'required|string',
             'cover_url' => 'required|string',
             'release_year' => 'required|integer',
             'publisher' => 'required|string',

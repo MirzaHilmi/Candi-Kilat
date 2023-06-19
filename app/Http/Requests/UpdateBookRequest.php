@@ -31,7 +31,7 @@ class UpdateBookRequest extends FormRequest
     {
         return [
             'author_id' => 'integer',
-            'name' => 'string',
+            'title' => 'string',
             'cover_url' => 'string',
             'release_year' => 'integer',
             'publisher' => 'string',

@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\BorrowedBookController;
 use App\Http\Controllers\ProfileController;
-use App\Models\Book;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,33 +16,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Routes that's available for all
+Route::get('/', [BookController::class, 'home'])->name('home.index');
+Route::get('/pencarian', [BookController::class, 'search'])->name('home.search');
+Route::get('/daftar-buku', [BookController::class, 'index'])->name('book.index');
+
+// Routes that's only available for Librarians
+Route::group(['middleware' => ['role:librarian']], function () {
+    // Page Peminjaman Buku
+    Route::get('/peminjaman', [BorrowedBookController::class, 'index']);
+    Route::post('/peminjaman', [BorrowedBookController::class]);
+
+    // Page Pengembalian Buku
+    Route::get('/pengembalian', [BorrowedBookController::class, 'returning']);
+    Route::patch('/pengembalian', [BorrowedBookController::class]);
+
+    // Page Riwayat Peminjaman Buku
+    Route::get('/riwayat', [BorrowedBookController::class, 'history']);
+    Route::get('/riwayat', [BorrowedBookController::class]);
+
+    // Librarian Routes buat CRUD Buku
+    Route::prefix('/book')->group(function () {
+        Route::post('/create', [BookController::class, 'store']);
+        Route::patch('/{book}/edit', [BookController::class, 'update']);
+        Route::delete('/{book}/delete', [BookController::class, 'destroy']);
+    });
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::get('/daftar-buku', function () {
-    return view('daftar-buku');
-})->middleware(['auth', 'verified'])->name('daftar-buku');
-
-Route::get('/book-detail/{id}', function ($id) {
-    return view('book-detail', ['id' => $id]);
-})->middleware(['auth', 'verified'])->name('book-detail');
-
-Route::get('/history', function () {
-    return view('history');
-})->middleware(['auth', 'verified'])->name('history');
-
-Route::get('/peminjaman', function () {
-    return view('peminjaman');
-})->middleware(['auth', 'verified'])->name('peminjaman');
-
-Route::get('/pengembalian', function () {
-    return view('pengembalian');
-})->middleware(['auth', 'verified'])->name('pengembalian');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -50,15 +49,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
-
-// Librarian Routes for Books CRUD
-Route::group(['middleware' => ['role:librarian']], function () {
-    Route::prefix('/book')->group(function () {
-        Route::get('/create', [BookController::class, 'create']);
-        Route::post('/create', [BookController::class, 'store']);
-        Route::get('/{book}/edit', [BookController::class, 'edit']);
-        Route::patch('/{book}/edit', [BookController::class, 'update']);
-        Route::delete('/{book}/delete', [BookController::class, 'destroy']);
-    });
-});
+require __DIR__ . '/auth.php';

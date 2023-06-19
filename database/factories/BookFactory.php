@@ -32,7 +32,8 @@ class BookFactory extends Factory
         if (isset($bookData['docs']) && count($bookData['docs']) > 0) {
             foreach ($bookData['docs'] as $book) {
                 $books[] = [
-                    'name' => $book['title'],
+                    'isbn' => isset($book['isbn'][0]) ? $book['isbn'][0] : fake()->regexify('[0-9]{13}'),
+                    'title' => $book['title'],
                     'cover_url' => isset($book['cover_i']) ? "https://covers.openlibrary.org/b/id/{$book['cover_i']}-L.jpg" : 'https://covers.openlibrary.org/b/id/9201534-L.jpg',
                     'release_year' => isset($book['first_publish_year']) ? $book['first_publish_year'] : fake()->randomNumber(4, true),
                     'publisher' => isset($book['publisher'][0]) && $book['publisher'][0] != 'Independently Published' ? $book['publisher'][0] : (isset($book['author_name'][0]) ? $book['author_name'][0] : fake()->name()),
@@ -45,7 +46,7 @@ class BookFactory extends Factory
                     'ebook_available' => fake()->boolean(),
                     'audio_book_available' => fake()->boolean(),
                     'status' => fake()->boolean(),
-                    'bookshelf' => strtoupper(fake()->randomLetter()) . '-' . fake()->randomNumber(3, false)
+                    'bookshelf' => fake()->bothify('?-##')
                 ];
             }
         }

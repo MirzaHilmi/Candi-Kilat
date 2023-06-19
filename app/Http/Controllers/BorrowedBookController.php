@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\BorrowedBook;
 use App\Http\Requests\StoreBorrowedBookRequest;
 use App\Http\Requests\UpdateBorrowedBookRequest;
+use App\Models\Book;
 
 class BorrowedBookController extends Controller
 {
@@ -13,15 +14,18 @@ class BorrowedBookController extends Controller
      */
     public function index()
     {
-        //
+        return view('book.borrowing', ['book' => Book::all()->take(35)]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function returning()
     {
-        //
+        return view('book.returning');
+    }
+
+    public function history()
+    {
+        $userID = auth()->id();
+        return view('book.history');
     }
 
     /**

@@ -8,12 +8,22 @@ use App\Http\Requests\UpdateBookRequest;
 
 class BookController extends Controller
 {
+    public function home()
+    {
+        return view('index', ['book' => Book::all()->take(35)]);
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return view('book.index', ['book' => Book::all()->take(35)]);
+    }
+
+    public function search()
+    {
+        return view('book.search', ['book' => Book::all()->take(35)]);
     }
 
     /**
@@ -39,8 +49,9 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        return view('dashboard', ['book' => $book]);
+        return view('book.detail', ['book' => $book]);
     }
+
 
     /**
      * Show the form for editing the specified resource.

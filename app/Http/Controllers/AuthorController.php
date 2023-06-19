@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Author;
 use App\Http\Requests\StoreAuthorRequest;
 use App\Http\Requests\UpdateAuthorRequest;
+use App\Models\Book;
 
 class AuthorController extends Controller
 {
@@ -13,7 +14,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
