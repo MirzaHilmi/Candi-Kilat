@@ -1,9 +1,297 @@
 <x-app-layout>
   <div class="w-full" x-data="{ modal: false }">
 
+
+    <table
+      class="w-full table-fixed border-separate border-spacing-y-2 border-spacing-x-2 px-2 text-xs md:border-spacing-x-4 md:px-4 md:text-sm lg:text-base">
+      <thead class="text-left">
+        <tr class="">
+          <th class="w-[10%]">Cover</th>
+          <th class="w-[30%] md:w-[40%]">Title</th>
+          <th class="hidden w-[20%] sm:flex">Category</th>
+          <th class="w-[15%]">Status</th>
+          <th class="w-[15%]">Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <img src="{{ url('/images/book.png') }}" alt="Image" class="shadow-md" />
+          </td>
+          <td class="">
+            <div class="flex flex-col">
+              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
+              <h4 class="text-sm">Steve Kurg, 2000</h4>
+              <span class="text-xs">Edisi Kedua</span>
+            </div>
+          </td>
+          <td class="hidden sm:flex">
+            <div class="flex flex-col">
+              <h3>Ilmu Komputer</h3>
+              <h4 class="text-sm">UX Design</h4>
+            </div>
+          </td>
+          <td>
+            <div class="flex flex-col gap-2">
+              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
+              <div class="flex flex-row items-center text-sm">
+                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
+                <span>
+                  B-10
+                </span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <button @click="modal = ! modal" class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
+              Pinjam Buku
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="{{ url('/images/book.png') }}" alt="Image" class="shadow-md" />
+          </td>
+          <td class="">
+            <div class="flex flex-col">
+              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
+              <h4 class="text-sm">Steve Kurg, 2000</h4>
+              <span class="text-xs">Edisi Kedua</span>
+            </div>
+          </td>
+          <td class="hidden sm:flex">
+            <div class="flex flex-col">
+              <h3>Ilmu Komputer</h3>
+              <h4 class="text-sm">UX Design</h4>
+            </div>
+          </td>
+          <td>
+            <div class="flex flex-col gap-2">
+              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
+              <div class="flex flex-row items-center text-sm">
+                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
+                <span>
+                  B-10
+                </span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <button @click="modal = ! modal" class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
+              Pinjam Buku
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="{{ url('/images/book.png') }}" alt="Image" class="shadow-md" />
+          </td>
+          <td class="">
+            <div class="flex flex-col">
+              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
+              <h4 class="text-sm">Steve Kurg, 2000</h4>
+              <span class="text-xs">Edisi Kedua</span>
+            </div>
+          </td>
+          <td class="hidden sm:flex">
+            <div class="flex flex-col">
+              <h3>Ilmu Komputer</h3>
+              <h4 class="text-sm">UX Design</h4>
+            </div>
+          </td>
+          <td>
+            <div class="flex flex-col gap-2">
+              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
+              <div class="flex flex-row items-center text-sm">
+                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
+                <span>
+                  B-10
+                </span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <button @click="modal = ! modal" class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
+              Pinjam Buku
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="{{ url('/images/book.png') }}" alt="Image" class="shadow-md" />
+          </td>
+          <td class="">
+            <div class="flex flex-col">
+              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
+              <h4 class="text-sm">Steve Kurg, 2000</h4>
+              <span class="text-xs">Edisi Kedua</span>
+            </div>
+          </td>
+          <td class="hidden sm:flex">
+            <div class="flex flex-col">
+              <h3>Ilmu Komputer</h3>
+              <h4 class="text-sm">UX Design</h4>
+            </div>
+          </td>
+          <td>
+            <div class="flex flex-col gap-2">
+              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
+              <div class="flex flex-row items-center text-sm">
+                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
+                <span>
+                  B-10
+                </span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <button @click="modal = ! modal" class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
+              Pinjam Buku
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="{{ url('/images/book.png') }}" alt="Image" class="shadow-md" />
+          </td>
+          <td class="">
+            <div class="flex flex-col">
+              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
+              <h4 class="text-sm">Steve Kurg, 2000</h4>
+              <span class="text-xs">Edisi Kedua</span>
+            </div>
+          </td>
+          <td class="hidden sm:flex">
+            <div class="flex flex-col">
+              <h3>Ilmu Komputer</h3>
+              <h4 class="text-sm">UX Design</h4>
+            </div>
+          </td>
+          <td>
+            <div class="flex flex-col gap-2">
+              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
+              <div class="flex flex-row items-center text-sm">
+                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
+                <span>
+                  B-10
+                </span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <button @click="modal = ! modal" class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
+              Pinjam Buku
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="{{ url('/images/book.png') }}" alt="Image" class="shadow-md" />
+          </td>
+          <td class="">
+            <div class="flex flex-col">
+              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
+              <h4 class="text-sm">Steve Kurg, 2000</h4>
+              <span class="text-xs">Edisi Kedua</span>
+            </div>
+          </td>
+          <td class="hidden sm:flex">
+            <div class="flex flex-col">
+              <h3>Ilmu Komputer</h3>
+              <h4 class="text-sm">UX Design</h4>
+            </div>
+          </td>
+          <td>
+            <div class="flex flex-col gap-2">
+              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
+              <div class="flex flex-row items-center text-sm">
+                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
+                <span>
+                  B-10
+                </span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <button @click="modal = ! modal" class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
+              Pinjam Buku
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="{{ url('/images/book.png') }}" alt="Image" class="shadow-md" />
+          </td>
+          <td class="">
+            <div class="flex flex-col">
+              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
+              <h4 class="text-sm">Steve Kurg, 2000</h4>
+              <span class="text-xs">Edisi Kedua</span>
+            </div>
+          </td>
+          <td class="hidden sm:flex">
+            <div class="flex flex-col">
+              <h3>Ilmu Komputer</h3>
+              <h4 class="text-sm">UX Design</h4>
+            </div>
+          </td>
+          <td>
+            <div class="flex flex-col gap-2">
+              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
+              <div class="flex flex-row items-center text-sm">
+                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
+                <span>
+                  B-10
+                </span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <button @click="modal = ! modal" class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
+              Pinjam Buku
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="{{ url('/images/book.png') }}" alt="Image" class="shadow-md" />
+          </td>
+          <td class="">
+            <div class="flex flex-col">
+              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
+              <h4 class="text-sm">Steve Kurg, 2000</h4>
+              <span class="text-xs">Edisi Kedua</span>
+            </div>
+          </td>
+          <td class="hidden sm:flex">
+            <div class="flex flex-col">
+              <h3>Ilmu Komputer</h3>
+              <h4 class="text-sm">UX Design</h4>
+            </div>
+          </td>
+          <td>
+            <div class="flex flex-col gap-2">
+              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
+              <div class="flex flex-row items-center text-sm">
+                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
+                <span>
+                  B-10
+                </span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <button @click="modal = ! modal" class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
+              Pinjam Buku
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
     <!-- Main modal -->
     <div :class="{ 'block': modal, 'hidden': !modal }" id="authentication-modal" tabindex="-1" aria-hidden="true"
-      class="bg fixed top-0 left-0 right-0 z-50 h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0">
+      class="bg fixed top-0 left-0 right-0 z-50 hidden h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0">
 
       <div class="fixed h-full w-full bg-slate-800 opacity-50">
 
@@ -82,293 +370,6 @@
       </div>
 
     </div>
-
-    <table
-      class="w-full table-fixed border-separate border-spacing-y-2 border-spacing-x-2 px-2 text-xs md:border-spacing-x-8 md:px-4 md:text-base">
-      <thead class="text-left">
-        <tr class="">
-          <th class="w-[10%]">Cover</th>
-          <th class="w-[30%] md:w-[40%]">Title</th>
-          <th class="hidden w-[20%] md:flex">Category</th>
-          <th class="w-[15%]">Status</th>
-          <th class="w-[15%]">Edit</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <img src="{{ url('/images/book.png') }}" alt="Image" class="shadow-md" />
-          </td>
-          <td class="">
-            <div class="flex flex-col">
-              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
-              <h4 class="text-sm">Steve Kurg, 2000</h4>
-              <span class="text-xs">Edisi Kedua</span>
-            </div>
-          </td>
-          <td class="hidden md:flex">
-            <div class="flex flex-col">
-              <h3>Ilmu Komputer</h3>
-              <h4 class="text-sm">UX Design</h4>
-            </div>
-          </td>
-          <td>
-            <div class="flex flex-col gap-2">
-              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
-              <div class="flex flex-row items-center text-sm">
-                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
-                <span>
-                  B-10
-                </span>
-              </div>
-            </div>
-          </td>
-          <td>
-            <button @click="modal = ! modal" class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
-              Pinjam Buku
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img src="{{ url('/images/book.png') }}" alt="Image" class="shadow-md" />
-          </td>
-          <td class="">
-            <div class="flex flex-col">
-              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
-              <h4 class="text-sm">Steve Kurg, 2000</h4>
-              <span class="text-xs">Edisi Kedua</span>
-            </div>
-          </td>
-          <td class="hidden md:flex">
-            <div class="flex flex-col">
-              <h3>Ilmu Komputer</h3>
-              <h4 class="text-sm">UX Design</h4>
-            </div>
-          </td>
-          <td>
-            <div class="flex flex-col gap-2">
-              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
-              <div class="flex flex-row items-center text-sm">
-                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
-                <span>
-                  B-10
-                </span>
-              </div>
-            </div>
-          </td>
-          <td>
-            <button @click="modal = ! modal" class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
-              Pinjam Buku
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img src="{{ url('/images/book.png') }}" alt="Image" class="shadow-md" />
-          </td>
-          <td class="">
-            <div class="flex flex-col">
-              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
-              <h4 class="text-sm">Steve Kurg, 2000</h4>
-              <span class="text-xs">Edisi Kedua</span>
-            </div>
-          </td>
-          <td class="hidden md:flex">
-            <div class="flex flex-col">
-              <h3>Ilmu Komputer</h3>
-              <h4 class="text-sm">UX Design</h4>
-            </div>
-          </td>
-          <td>
-            <div class="flex flex-col gap-2">
-              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
-              <div class="flex flex-row items-center text-sm">
-                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
-                <span>
-                  B-10
-                </span>
-              </div>
-            </div>
-          </td>
-          <td>
-            <button @click="modal = ! modal" class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
-              Pinjam Buku
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img src="{{ url('/images/book.png') }}" alt="Image" class="shadow-md" />
-          </td>
-          <td class="">
-            <div class="flex flex-col">
-              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
-              <h4 class="text-sm">Steve Kurg, 2000</h4>
-              <span class="text-xs">Edisi Kedua</span>
-            </div>
-          </td>
-          <td class="hidden md:flex">
-            <div class="flex flex-col">
-              <h3>Ilmu Komputer</h3>
-              <h4 class="text-sm">UX Design</h4>
-            </div>
-          </td>
-          <td>
-            <div class="flex flex-col gap-2">
-              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
-              <div class="flex flex-row items-center text-sm">
-                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
-                <span>
-                  B-10
-                </span>
-              </div>
-            </div>
-          </td>
-          <td>
-            <button @click="modal = ! modal" class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
-              Pinjam Buku
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img src="{{ url('/images/book.png') }}" alt="Image" class="shadow-md" />
-          </td>
-          <td class="">
-            <div class="flex flex-col">
-              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
-              <h4 class="text-sm">Steve Kurg, 2000</h4>
-              <span class="text-xs">Edisi Kedua</span>
-            </div>
-          </td>
-          <td class="hidden md:flex">
-            <div class="flex flex-col">
-              <h3>Ilmu Komputer</h3>
-              <h4 class="text-sm">UX Design</h4>
-            </div>
-          </td>
-          <td>
-            <div class="flex flex-col gap-2">
-              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
-              <div class="flex flex-row items-center text-sm">
-                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
-                <span>
-                  B-10
-                </span>
-              </div>
-            </div>
-          </td>
-          <td>
-            <button @click="modal = ! modal" class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
-              Pinjam Buku
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img src="{{ url('/images/book.png') }}" alt="Image" class="shadow-md" />
-          </td>
-          <td class="">
-            <div class="flex flex-col">
-              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
-              <h4 class="text-sm">Steve Kurg, 2000</h4>
-              <span class="text-xs">Edisi Kedua</span>
-            </div>
-          </td>
-          <td class="hidden md:flex">
-            <div class="flex flex-col">
-              <h3>Ilmu Komputer</h3>
-              <h4 class="text-sm">UX Design</h4>
-            </div>
-          </td>
-          <td>
-            <div class="flex flex-col gap-2">
-              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
-              <div class="flex flex-row items-center text-sm">
-                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
-                <span>
-                  B-10
-                </span>
-              </div>
-            </div>
-          </td>
-          <td>
-            <button @click="modal = ! modal" class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
-              Pinjam Buku
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img src="{{ url('/images/book.png') }}" alt="Image" class="shadow-md" />
-          </td>
-          <td class="">
-            <div class="flex flex-col">
-              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
-              <h4 class="text-sm">Steve Kurg, 2000</h4>
-              <span class="text-xs">Edisi Kedua</span>
-            </div>
-          </td>
-          <td class="hidden md:flex">
-            <div class="flex flex-col">
-              <h3>Ilmu Komputer</h3>
-              <h4 class="text-sm">UX Design</h4>
-            </div>
-          </td>
-          <td>
-            <div class="flex flex-col gap-2">
-              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
-              <div class="flex flex-row items-center text-sm">
-                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
-                <span>
-                  B-10
-                </span>
-              </div>
-            </div>
-          </td>
-          <td>
-            <button @click="modal = ! modal" class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
-              Pinjam Buku
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img src="{{ url('/images/book.png') }}" alt="Image" class="shadow-md" />
-          </td>
-          <td class="">
-            <div class="flex flex-col">
-              <h3 class="text-sm font-bold md:text-lg">Dont Make Me Think</h3>
-              <h4 class="text-sm">Steve Kurg, 2000</h4>
-              <span class="text-xs">Edisi Kedua</span>
-            </div>
-          </td>
-          <td class="hidden md:flex">
-            <div class="flex flex-col">
-              <h3>Ilmu Komputer</h3>
-              <h4 class="text-sm">UX Design</h4>
-            </div>
-          </td>
-          <td>
-            <div class="flex flex-col gap-2">
-              <h3 class="rounded-md bg-[#052355] py-1 px-1 text-center text-white md:px-2">Tersedia</h3>
-              <div class="flex flex-row items-center text-sm">
-                <img src="{{ url('/images/map-pin.svg') }}" alt="Image" />
-                <span>
-                  B-10
-                </span>
-              </div>
-            </div>
-          </td>
-          <td>
-            <button @click="modal = ! modal" class="w-max rounded-md border border-[#517DAB] py-1 px-2 md:border-2">
-              Pinjam Buku
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 
 </x-app-layout>

@@ -1,5 +1,5 @@
 <x-app-layout>
-  <div class="flex w-full flex-col justify-center gap-4 px-40">
+  <div class="flex w-full flex-col justify-center gap-4 px-8 sm:px-16 md:px-40">
     <h1 class="text-center text-4xl font-bold">Pengembalian Buku</h1>
     <div class="flex flex-col gap-2">
       <h3>Kode Buku: </h3>
