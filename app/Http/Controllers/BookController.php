@@ -10,7 +10,7 @@ class BookController extends Controller
 {
     public function home()
     {
-        return view('index', ['book' => Book::all()->take(35)]);
+        return view('index', ['books' => Book::all()->take(35)]);
     }
 
     /**
@@ -18,12 +18,12 @@ class BookController extends Controller
      */
     public function index()
     {
-        return view('book.index', ['book' => Book::all()->take(35)]);
+        return view('book.index', ['books' => Book::all()->take(35)]);
     }
 
     public function search()
     {
-        return view('book.search', ['book' => Book::all()->take(35)]);
+        return view('book.search', ['books' => Book::all()->take(35)]);
     }
 
     /**

@@ -14,7 +14,7 @@ class BorrowedBookController extends Controller
      */
     public function index()
     {
-        return view('book.borrowing', ['book' => Book::all()->take(35)]);
+        return view('book.borrowing', ['books' => Book::all()->take(35)]);
     }
 
     public function returning()
