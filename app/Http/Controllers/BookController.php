@@ -8,22 +8,38 @@ use App\Http\Requests\UpdateBookRequest;
 
 class BookController extends Controller
 {
-    public function home()
+    public function home(string $keyword)
     {
-        return view('index', ['books' => Book::all()->take(35)]);
+        if (!isset($keyword)) return view('index', ['books' => Book::all()->take(35)]);
+
+        return redirect()->route('home.index', ['books' => $this->find($keyword)]);
     }
 
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(string $keyword)
     {
-        return view('book.index', ['books' => Book::all()->take(35)]);
+        if (!isset($keyword)) return view('book.index', ['books' => Book::all()->take(35)]);
+
+        return redirect()->route('book.index', ['books' => $this->find($keyword)]);
     }
 
-    public function search()
+    public function search(string $keyword)
     {
-        return view('book.search', ['books' => Book::all()->take(35)]);
+        if (!isset($keyword)) return view('book.search', ['books' => Book::all()->take(35)]);
+
+        return view('book.search', ['books' => $this->find($keyword)]);
+    }
+
+    private function find(string $keyword)
+    {
+        $searchKeyword = htmlspecialchars(strip_tags($keyword));
+
+        $result = Book::where('title', 'like', "%$searchKeyword%")->take(15)->get()
+            ?? Book::where('title', 'like', "%$searchKeyword%")->take(15)->get();
+
+        return $result;
     }
 
     /**
