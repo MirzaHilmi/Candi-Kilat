@@ -24,16 +24,15 @@ Route::get('/daftar-buku', [BookController::class, 'index'])->name('book.index')
 // Routes that's only available for Librarians
 Route::group(['middleware' => ['role:librarian']], function () {
     // Page Peminjaman Buku
-    Route::get('/peminjaman', [BorrowedBookController::class, 'index']);
+    Route::get('/peminjaman', [BorrowedBookController::class, 'index'])->name('book.borrowing');
     Route::post('/peminjaman', [BorrowedBookController::class]);
 
     // Page Pengembalian Buku
-    Route::get('/pengembalian', [BorrowedBookController::class, 'returning']);
+    Route::get('/pengembalian', [BorrowedBookController::class, 'returning'])->name('book.returning');
     Route::patch('/pengembalian', [BorrowedBookController::class]);
 
     // Page Riwayat Peminjaman Buku
-    Route::get('/riwayat', [BorrowedBookController::class, 'history']);
-    Route::get('/riwayat', [BorrowedBookController::class]);
+    Route::get('/riwayat', [BorrowedBookController::class, 'history'])->name('book.history');
 
     // Librarian Routes buat CRUD Buku
     Route::prefix('/book')->group(function () {

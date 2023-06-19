@@ -25,19 +25,19 @@
         <img src="{{ url('/images/Search.svg') }}" alt="Image" class="w-4" />
         {{ __('Pencarian Buku') }}
       </a>
-      <a class="flex w-full flex-row items-center gap-4" href="{{ route('daftar-buku') }}">
+      <a class="flex w-full flex-row items-center gap-4" href="{{ route('book.index') }}">
         <img src="{{ url('/images/Bookshelf.svg') }}" alt="Image" class="w-4" />
         {{ __('Daftar Buku') }}
       </a>
-      <a class="flex w-full flex-row items-center gap-4" href="{{ route('peminjaman') }}">
+      <a class="flex w-full flex-row items-center gap-4" href="{{ route('book.borrowing') }}">
         <img src="{{ url('/images/gift.svg') }}" alt="Image" class="w-4" />
         {{ __('Peminjaman Buku') }}
       </a>
-      <a class="flex w-full flex-row items-center gap-4" href="{{ route('pengembalian') }}">
+      <a class="flex w-full flex-row items-center gap-4" href="{{ route('book.returning') }}">
         <img src="{{ url('/images/gift.svg') }}" alt="Image" class="w-4" />
         {{ __('Pengembalian Buku') }}
       </a>
-      <a class="flex w-full flex-row items-center gap-4" href="{{ route('history') }}">
+      <a class="flex w-full flex-row items-center gap-4" href="{{ route('book.history') }}">
         <img src="{{ url('/images/riwayat.svg') }}" alt="Image" class="w-4" />
         {{ __('Riwayat') }}
       </a>
