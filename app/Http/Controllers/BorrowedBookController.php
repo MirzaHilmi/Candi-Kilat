@@ -6,6 +6,7 @@ use App\Models\BorrowedBook;
 use App\Http\Requests\StoreBorrowedBookRequest;
 use App\Http\Requests\UpdateBorrowedBookRequest;
 use App\Models\Book;
+use Illuminate\Database\Query\Builder;
 
 class BorrowedBookController extends Controller
 {
@@ -20,6 +21,20 @@ class BorrowedBookController extends Controller
     public function returning()
     {
         return view('book.returning');
+    }
+
+    private function find(string $keyword)
+    {
+        $searchKeyword = htmlspecialchars(strip_tags($keyword));
+
+        $result = Book::where('title', 'like', "%$searchKeyword%")->take(15)->get()
+            ?? Book::where('author_id', function (Builder $query) use ($searchKeyword) {
+                $query->select('id')
+                    ->from('author')
+                    ->where('name', 'like', "%$searchKeyword%");
+            })->take(15)->get();
+
+        return $result;
     }
 
     public function history()

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
+use Illuminate\Database\Query\Builder;
 
 class BookController extends Controller
 {
@@ -37,7 +38,11 @@ class BookController extends Controller
         $searchKeyword = htmlspecialchars(strip_tags($keyword));
 
         $result = Book::where('title', 'like', "%$searchKeyword%")->take(15)->get()
-            ?? Book::where('title', 'like', "%$searchKeyword%")->take(15)->get();
+            ?? Book::where('author_id', function (Builder $query) use ($searchKeyword) {
+                $query->select('id')
+                    ->from('author')
+                    ->where('name', 'like', "%$searchKeyword%");
+            })->take(15)->get();
 
         return $result;
     }

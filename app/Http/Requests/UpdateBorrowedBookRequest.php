@@ -30,12 +30,14 @@ class UpdateBorrowedBookRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id' => 'required|integer',
             'book_id' => 'integer',
-            'user_id' => 'integer',
+            // 'user_id' => 'integer',
+            'name' => 'string',
+            'email' => 'string|email',
             'borrowed_date' => 'date',
             'until_date' => 'date',
-            'return_date' => 'date'
+            'return_date' => 'date',
+            'borrowed' => 'boolean'
         ];
     }
 }

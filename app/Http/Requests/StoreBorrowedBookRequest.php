@@ -31,7 +31,9 @@ class StoreBorrowedBookRequest extends FormRequest
     {
         return [
             'book_id' => 'required|integer',
-            'user_id' => 'required|integer',
+            // 'user_id' => 'required|integer',
+            'name' => 'required_without:email|string',
+            'email' => 'required_without:name|string',
             'borrowed_date' => 'required|date',
             'until_date' => 'required|date',
         ];
