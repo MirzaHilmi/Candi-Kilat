@@ -15,28 +15,15 @@ class BorrowedBookController extends Controller
      */
     public function index()
     {
+        $searchQuery = request('search_query');
+        if (!isset($searchQuery)) return view('book.borrowing', ['books' => Book::all()->take(35)]);
+
         return view('book.borrowing', ['books' => Book::all()->take(35)]);
     }
 
     public function returning()
     {
         return view('book.returning');
-    }
-
-    private function find(string $keyword)
-    {
-        $searchKeyword = htmlspecialchars(strip_tags($keyword));
-
-        $result =
-            Book::where('title', 'like', "%$searchKeyword%")->take(15)->get()
-            ??
-            Book::where('author_id', function (Builder $query) use ($searchKeyword) {
-                $query->select('id')
-                    ->from('author')
-                    ->where('name', 'like', "%$searchKeyword%");
-            })->take(15)->get();
-
-        return $result;
     }
 
     public function history()
