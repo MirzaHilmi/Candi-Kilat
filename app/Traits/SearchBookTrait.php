@@ -26,6 +26,6 @@ trait SearchBookTrait
             }
         )->get()->load('author', 'categories');
 
-        return $books ?? (new Book())->newCollection();
+        return $books;
     }
 }
