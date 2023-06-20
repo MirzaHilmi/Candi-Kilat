@@ -14,10 +14,13 @@ return new class extends Migration
         Schema::create('borrowed_books', function (Blueprint $table) {
             $table->id();
             $table->foreignId('book_id')->nullable()->constrained()->cascadeOnUpdate()->nullOnDelete();
-            $table->foreignId('user_id')->nullable()->constrained()->cascadeOnUpdate()->nullOnDelete();
+            // $table->foreignId('user_id')->nullable()->constrained()->cascadeOnUpdate()->nullOnDelete();
+            $table->string('name');
+            $table->string('email');
             $table->date('borrowed_date');
             $table->date('until_date');
             $table->date('return_date')->nullable();
+            $table->boolean('borrowed')->default(true);
             $table->timestamps();
         });
     }

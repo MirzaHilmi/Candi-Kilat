@@ -5,41 +5,34 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
+use App\Traits\SearchBookTrait;
 
 class BookController extends Controller
 {
-    public function home(string $keyword)
-    {
-        if (!isset($keyword)) return view('index', ['books' => Book::all()->take(35)]);
+    use SearchBookTrait;
 
-        return redirect()->route('home.index', ['books' => $this->find($keyword)]);
+    public function home(string $search)
+    {
+        if (!isset($search)) return view('index', ['books' => Book::all()->take(35)]);
+
+        return redirect()->route('home.index', ['books' => $this->searchBook($search)]);
     }
 
     /**
      * Display a listing of the resource.
      */
-    public function index(string $keyword)
+    public function index(string $search)
     {
-        if (!isset($keyword)) return view('book.index', ['books' => Book::all()->take(35)]);
+        if (!isset($search)) return view('book.index', ['books' => Book::all()->take(35)]);
 
-        return redirect()->route('book.index', ['books' => $this->find($keyword)]);
+        return redirect()->route('book.index', ['books' => $this->searchBook($search)]);
     }
 
-    public function search(string $keyword)
+    public function search(string $search)
     {
-        if (!isset($keyword)) return view('book.search', ['books' => Book::all()->take(35)]);
+        if (!isset($search)) return view('book.search', ['books' => Book::all()->take(35)]);
 
-        return view('book.search', ['books' => $this->find($keyword)]);
-    }
-
-    private function find(string $keyword)
-    {
-        $searchKeyword = htmlspecialchars(strip_tags($keyword));
-
-        $result = Book::where('title', 'like', "%$searchKeyword%")->take(15)->get()
-            ?? Book::where('title', 'like', "%$searchKeyword%")->take(15)->get();
-
-        return $result;
+        return view('book.search', ['books' => $this->searchBook($search)]);
     }
 
     /**
