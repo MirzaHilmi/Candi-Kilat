@@ -11,8 +11,9 @@ class BookController extends Controller
 {
     use SearchBookTrait;
 
-    public function home(string $search)
+    public function home()
     {
+        $search = request('category');
         if (!isset($search)) return view('index', ['books' => Book::all()->take(35)]);
 
         return redirect()->route('home.index', ['books' => $this->searchBook($search)]);
@@ -21,8 +22,9 @@ class BookController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(string $search)
+    public function index()
     {
+        $search = request('category');
         if (!isset($search)) return view('book.index', ['books' => Book::all()->take(35)]);
 
         return redirect()->route('book.index', ['books' => $this->searchBook($search)]);
