@@ -13,10 +13,10 @@ class BookController extends Controller
 
     public function home()
     {
-        $search = request('category');
-        if (!isset($search)) return view('index', ['books' => Book::all()->take(35)]);
+        $searchQuery = request('search_query');
+        if (!isset($searchQuery)) return view('index', ['books' => Book::all()->take(35)]);
 
-        return redirect()->route('home.index', ['books' => $this->searchBook($search)]);
+        return redirect()->route('home.index', ['books' => $this->searchBook($searchQuery)]);
     }
 
     /**
@@ -24,17 +24,18 @@ class BookController extends Controller
      */
     public function index()
     {
-        $search = request('category');
-        if (!isset($search)) return view('book.index', ['books' => Book::all()->take(35)]);
+        $searchQuery = request('search_query');
+        if (!isset($searchQuery)) return view('book.index', ['books' => Book::all()->take(35)]);
 
-        return redirect()->route('book.index', ['books' => $this->searchBook($search)]);
+        return redirect()->route('book.index', ['books' => $this->searchBook($searchQuery)]);
     }
 
-    public function search(string $search)
+    public function search()
     {
-        if (!isset($search)) return view('book.search', ['books' => Book::all()->take(35)]);
+        $searchQuery = request('search_query');
+        if (!isset($searchQuery)) return view('book.search', ['books' => Book::all()->take(35)]);
 
-        return view('book.search', ['books' => $this->searchBook($search)]);
+        return view('book.search', ['books' => $this->searchBook($searchQuery)]);
     }
 
     /**
@@ -89,5 +90,13 @@ class BookController extends Controller
     {
         Book::destroy($book);
         return redirect()->route('dashboard');
+    }
+
+    public function test()
+    {
+        $searchQuery = request('search_query');
+        if (!isset($searchQuery)) return view('book.test', ['books' => Book::all()->take(35)]);
+
+        return view('book.test', ['books' => $this->searchBook($searchQuery)]);
     }
 }

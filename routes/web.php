@@ -42,6 +42,10 @@ Route::group(['middleware' => ['role:librarian']], function () {
     });
 });
 
+// ------------------------------------ Testing ------------------------------------------
+
+Route::get('/test', [BookController::class, 'test'])->name('book.test');
+
 // ---------------------------------------------------------------------------------------
 
 Route::middleware('auth')->group(function () {
