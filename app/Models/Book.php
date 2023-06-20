@@ -10,6 +10,11 @@ class Book extends Model
 {
     use HasFactory, Searchable;
 
+    protected $with = [
+        'author',
+        'categories'
+    ];
+
     protected $fillable = [
         'author_id',
         'title',

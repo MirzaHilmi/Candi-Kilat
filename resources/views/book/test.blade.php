@@ -12,6 +12,7 @@
         </tr>
       </thead>
       <tbody>
+
         @foreach ($books as $book)
           <tr>
             <td>
