@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Book extends Model
 {
-    use HasFactory;
+    use HasFactory, Searchable;
 
     protected $fillable = [
         'author_id',
@@ -37,7 +38,18 @@ class Book extends Model
         return $this->belongsToMany(Category::class);
     }
 
-    public function author() {
+    public function author()
+    {
         return $this->belongsTo(Author::class);
+    }
+
+    public function toSearchableArray()
+    {
+        return [
+            'title' => '',
+            'body' => '',
+            'author.name' => '',
+            'categories.name' => '',
+        ];
     }
 }
