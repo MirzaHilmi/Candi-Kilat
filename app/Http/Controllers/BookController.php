@@ -14,15 +14,17 @@ class BookController extends Controller
     public function home()
     {
         $searchQuery = request('search_query');
-        if (!isset($searchQuery) || empty($searchQuery)) return view('index', ['books' => Book::all()->take(35)]);
+        if (!isset($searchQuery) || empty($searchQuery))
+            return view('index', ['books' => Book::query()->take(35)->get()]);
 
-        return redirect()->route('home.index', ['books' => $this->searchBook($searchQuery)]);
+        return view('index', ['books' => $this->searchBook($searchQuery)]);
     }
 
     public function search()
     {
         $searchQuery = request('search_query');
-        if (!isset($searchQuery) || empty($searchQuery)) return view('book.search', ['books' => Book::all()->take(35)]);
+        if (!isset($searchQuery) || empty($searchQuery))
+            return view('book.search', ['books' => Book::query()->take(35)->get()]);
 
         return view('book.search', ['books' => $this->searchBook($searchQuery)]);
     }
@@ -33,7 +35,8 @@ class BookController extends Controller
     public function index()
     {
         $searchQuery = request('search_query');
-        if (!isset($searchQuery) || empty($searchQuery)) return view('book.index', ['books' => Book::all()->take(35)]);
+        if (!isset($searchQuery) || empty($searchQuery))
+            return view('book.index', ['books' => Book::query()->take(35)->get()]);
 
         return view('book.index', ['books' => $this->searchBook($searchQuery)]);
     }
@@ -95,7 +98,8 @@ class BookController extends Controller
     public function test()
     {
         $searchQuery = request('search_query');
-        if (!isset($searchQuery)) return view('book.test', ['books' => Book::all()->take(35)]);
+        if (!isset($searchQuery) || empty($searchQuery))
+            return view('book.test', ['books' => Book::query()->take(35)->get()]);
 
         return view('book.test', ['books' => $this->searchBook($searchQuery)]);
     }
